@@ -1,0 +1,71 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Bella Hair</title>
+
+    <!-- Your CSS file MUST be linked here -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+
+<!-- START: La Bella Header (mobile-first) -->
+<header class="lb-header">
+  <div class="lb-inner">
+    <!-- left: logo -->
+    <div class="lb-left">
+      <a href="index.html" class="lb-logo-link">
+        <img src="assets/la-bella-hair-logo.jpg" alt="La Bella Hair" class="lb-logo">
+      </a>
+    </div>
+
+    <!-- center: (kept empty to allow logo-left + icons-right layout) -->
+    <div class="lb-center" aria-hidden="true"></div>
+
+    <!-- right: icons -->
+    <div class="lb-right">
+      <button class="lb-icon lb-search" aria-label="Search">🔍</button>
+      <button class="lb-icon lb-user" aria-label="Account">👤</button>
+
+      <!-- cart: icon + count + inline dropdown -->
+      <div class="lb-cart" id="lbCart">
+        <button id="lbCartBtn" class="lb-cart-btn" aria-expanded="false" aria-controls="lbCartDropdown">🛒
+          <span id="lbCartCount" class="lb-cart-count" aria-hidden="true">0</span>
+        </button>
+
+        <div id="lbCartDropdown" class="lb-cart-dropdown" aria-hidden="true">
+          <div id="lbCartItems" class="lb-cart-items">
+            <div class="lb-empty">Your cart is empty.</div>
+          </div>
+
+          <div class="lb-cart-actions">
+            <button id="lbClearCart" class="lb-btn lb-clear">🧹 Clear</button>
+            <button id="lbCheckout" class="lb-btn lb-checkout">💳 Checkout</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- hamburger visible on all sizes (we animate and also allow desktop) -->
+      <button id="lbHamburger" class="lb-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- collapsible nav (hidden by default; toggled by hamburger) -->
+  <nav id="lbNav" class="lb-nav" aria-hidden="true">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<!-- END: La Bella Header -->
+
+
+
+<script src="js/script.js" defer></script>
+<script src="js/main.js" defer></script>

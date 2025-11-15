@@ -1,0 +1,135 @@
+/* ---------------------------------------------
+   HEADER BASE
+--------------------------------------------- */
+.lb-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: rgba(255,255,255,0.1); /* transparent */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.lb-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+}
+
+/* Logo */
+.lb-logo {
+  width: 55px;
+  height: auto;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 6px gold); /* soft golden glow */
+}
+
+/* Right icons */
+.lb-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lb-icon,
+.lb-cart-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Hamburger */
+.lb-hamburger {
+  width: 32px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.lb-hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: black;
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+/* Hamburger animation (active state) */
+.lb-hamburger.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.lb-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.lb-hamburger.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ---------------------------------------------
+   NAV MENU (Mobile First)
+--------------------------------------------- */
+.lb-nav {
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.lb-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lb-nav li {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.lb-nav a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+/* Show Menu (active) */
+.lb-nav.open {
+  max-height: 300px; /* enough height for 4 items */
+}
+
+/* ---------------------------------------------
+   DESKTOP VIEW
+--------------------------------------------- */
+@media (min-width: 900px) {
+
+  /* Desktop: nav becomes horizontal */
+  .lb-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    max-height: 0;
+  }
+
+  .lb-nav ul {
+    display: flex;
+    flex-direction: column; /* still dropdown */
+  }
+
+  /* Hamburger STILL visible (your request) */
+  #lbHamburger {
+    display: flex;
+  }
+}
